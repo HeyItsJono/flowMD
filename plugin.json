@@ -7,7 +7,7 @@
     "Version":"1.0.0",
     "Language":"python",
     "Website":"https://github.com/HeyItsJono/flowMD",
-    "IcoPath": "img\\mdcalc.svg",
+    "IcoPath": "assets\\mdcalc.svg",
     "ExecuteFileName":"main.py"
   }
   
