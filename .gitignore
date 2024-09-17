@@ -1,3 +1,10 @@
+# User-specified ignores
+.vscode
+old.py
+mdcalc.txt
+mdcalc_list.txt
+parent.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
