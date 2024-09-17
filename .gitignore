@@ -1,9 +1,6 @@
 # User-specified ignores
 .vscode
-old.py
-mdcalc.txt
-mdcalc_list.txt
-parent.txt
+plugin/old.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

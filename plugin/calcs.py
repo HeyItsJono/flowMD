@@ -41,4 +41,3 @@ def fetch():
 
 if __name__ == "__main__":
     print(fetch())
-    print("I am here to be a breakpoint uwu")
