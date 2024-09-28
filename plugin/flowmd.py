@@ -4,7 +4,7 @@ from flowlauncher import FlowLauncher
 
 import plugin.calcs
 
-calcs = plugin.calcs.fetch()
+calcs = plugin.calcs.cache()
 
 
 class flowMD(FlowLauncher):

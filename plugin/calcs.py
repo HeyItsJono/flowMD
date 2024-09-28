@@ -1,3 +1,5 @@
+import datetime
+import os
 import re
 from json import loads
 
@@ -37,6 +39,30 @@ def fetch():
     # Big variables, no longer needed.
     del raw_calcs, mdcalcs
     return all_calcs
+
+
+def cache(age=7):
+    # Check for the existence of a cache file. If it exists, check if it was generated less than X days ago (default = 1wk). If it was, return the cached calcs.
+    cache_file = "cache.json"
+    if os.path.exists(cache_file):
+        with open(cache_file, "r") as f:
+            cache = loads(f.read())
+            if datetime.datetime.now() - datetime.datetime.fromisoformat(
+                cache["timestamp"]
+            ) < datetime.timedelta(days=age):
+                return cache["calcs"]
+
+    # If the cache file doesn't exist, or is older than a week, fetch the calcs, write them to the cache file, and return them.
+    calcs = fetch()
+    with open(cache_file, "w") as f:
+        f.write(
+            '{"calcs": '
+            + str(calcs)
+            + ', "timestamp": "'
+            + str(datetime.datetime.now().isoformat())
+            + '"}'
+        )
+    return calcs
 
 
 if __name__ == "__main__":
