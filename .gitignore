@@ -1,6 +1,7 @@
 # User-specified ignores
 .vscode
 plugin/old.py
+cache.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
