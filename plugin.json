@@ -2,7 +2,7 @@
     "ID":"d6869b73-bdf1-4fd7-8efc-5f183aef3e27",
     "ActionKeyword":"mdcalc",
     "Name":"flowMD",
-    "Description":"Search for and open MDCalc calculators from within Flow Launcher."
+    "Description":"Search for and open MDCalc calculators from within Flow Launcher.",
     "Author":"Freymotifs",
     "Version":"1.0.0",
     "Language":"python",
