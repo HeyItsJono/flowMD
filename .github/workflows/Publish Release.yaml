@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       python_ver: 3.12
+    permissions:
+        contents: write
 
     steps:
       - uses: actions/checkout@v2
@@ -37,7 +39,5 @@ jobs:
         with:
           files: 'Flow.Launcher.Plugin.flowMD.zip'
           tag_name: "v${{steps.version.outputs.prop}}"
-          permissions:
-            contents: write
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
