@@ -13,3 +13,10 @@ body:
         - '10'
         - '14'
         - '21'
+  - type: textarea
+    attributes:
+      name: favourites
+      label: Favourites
+      description: >-
+        Favourite calculators appear above all others. Add the title of the
+        calculator below, separate each one by a new line.
