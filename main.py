@@ -6,7 +6,7 @@ plugindir = Path.absolute(Path(__file__).parent)
 paths = (".", "lib", "plugin")
 sys.path = [str(plugindir / p) for p in paths] + sys.path
 
-from plugin.flowmd import flowMD  # noqa: E402
+from plugin import flowMD  # noqa: E402
 
 if __name__ == "__main__":
     flowMD()
