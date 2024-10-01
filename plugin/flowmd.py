@@ -3,9 +3,10 @@ import webbrowser
 from flowlauncher import FlowLauncher
 
 import plugin.calcs
+import plugin.settings
 
 calcs = plugin.calcs.cache()
-settings = plugin.SETTINGS
+settings = plugin.settings.get()
 
 
 class flowMD(FlowLauncher):
@@ -74,7 +75,7 @@ class flowMD(FlowLauncher):
             },
             {
                 "Title": "Add to Favourites",
-                "SubTitle": "(WIP) Favourite calculators are shown above the others.",
+                "SubTitle": "Favourite calculators are shown above the others.",
                 "IcoPath": "assets/mdcalc.png",
                 "JSONRPCAction": {
                     "method": "add_to_favourites",
@@ -89,7 +90,7 @@ class flowMD(FlowLauncher):
 
     def add_to_favourites(self, title):
         settings["favourites"].append(title)
-        plugin.saveSettings(settings)
+        plugin.settings.save(settings)
         return
 
 

@@ -9,22 +9,22 @@ import os
 DEFAULT_SETTINGS = {"age": "7", "favourites": []}
 
 
-def getSettings():
+def get():
     if os.path.exists("settings.json"):
         with open("settings.json", "r") as f:
-            SETTINGS = json.load(f)
-        return SETTINGS
+            settings = json.load(f)
+        return settings
     else:
         with open("settings.json", "w") as f:
             json.dump(DEFAULT_SETTINGS, f)
         return DEFAULT_SETTINGS
 
 
-def saveSettings(SETTINGS):
+def save(settings):
     with open("settings.json", "w") as f:
-        json.dump(SETTINGS, f)
+        json.dump(settings, f)
     return
 
 
 if __name__ == "__main__":
-    getSettings()
+    get()
