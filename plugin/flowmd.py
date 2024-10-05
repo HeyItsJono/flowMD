@@ -18,11 +18,13 @@ class flowMD(FlowLauncher):
                     score = 100
                 else:
                     score = 0
+
                 results.append(
                     {
                         "Title": calc["title"],
                         "SubTitle": calc["description"],
                         "IcoPath": "assets/mdcalc.png",
+                        "ContextData": calc,
                         "JSONRPCAction": {
                             "method": "open_url",
                             "parameters": [calc["url"]],
@@ -36,6 +38,7 @@ class flowMD(FlowLauncher):
                     score = 100
                 else:
                     score = 0
+
                 if (
                     query in calc["title"].lower()
                     or query in calc["description"].lower()
@@ -45,6 +48,7 @@ class flowMD(FlowLauncher):
                             "Title": calc["title"],
                             "SubTitle": calc["description"],
                             "IcoPath": "assets/mdcalc.png",
+                            "ContextData": calc,
                             "JSONRPCAction": {
                                 "method": "open_url",
                                 "parameters": [calc["url"]],
@@ -62,7 +66,8 @@ class flowMD(FlowLauncher):
             )
         return results
 
-    def context_menu(self, data):
+    def context_menu(self, calc):
+        # "calc" in this case is passed to this function via the ContextData from the query results.
         return [
             {
                 "Title": "Open Calculator",
@@ -70,7 +75,7 @@ class flowMD(FlowLauncher):
                 "IcoPath": "assets/mdcalc.png",
                 "JSONRPCAction": {
                     "method": "open_url",
-                    "parameters": [data["JSONRPCAction"]["parameters"][0]],
+                    "parameters": [calc["url"]],
                 },
             },
             {
@@ -79,7 +84,7 @@ class flowMD(FlowLauncher):
                 "IcoPath": "assets/mdcalc.png",
                 "JSONRPCAction": {
                     "method": "add_to_favourites",
-                    "parameters": [data["Title"]],
+                    "parameters": [calc["title"]],
                 },
             },
         ]

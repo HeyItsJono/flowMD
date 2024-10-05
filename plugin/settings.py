@@ -1,15 +1,12 @@
 import json
 import os
-
-# from typing import Literal, TypedDict
-# Settings = TypedDict("Settings", {"age": Literal["1", "3", "5", "7", "10", "14", "21"],
-# 	'favourites': str | None})
-
+import sys
 
 DEFAULT_SETTINGS = {"age": "7", "favourites": []}
 
 
 def get():
+    # json.loads(sys.argv[1])
     if os.path.exists("settings.json"):
         with open("settings.json", "r") as f:
             settings = json.load(f)
@@ -21,8 +18,11 @@ def get():
 
 
 def save(settings):
+    rpc_settings_request = {"method": "", "parameters": [], "settings": settings}
+    json.dump(rpc_settings_request, sys.stdout)
     with open("settings.json", "w") as f:
         json.dump(settings, f)
+
     return
 
 
