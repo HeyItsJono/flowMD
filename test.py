@@ -1,5 +1,5 @@
-from plugin import flowmd
+from flowmd import flowMD
 
 if __name__ == "__main__":
-    r = flowmd.flowMD().query("")
+    r = flowMD().query("")
     print(r)

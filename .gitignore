@@ -1,6 +1,6 @@
 # User-specified ignores
 .vscode
-plugin/old.py
+flowmd/old.py
 cache.json
 
 # Byte-compiled / optimized / DLL files

@@ -4,7 +4,7 @@
     "Name":"flowMD",
     "Description":"Search for and open MDCalc calculators from within Flow Launcher.",
     "Author":"Freymotifs",
-    "Version":"1.5.0",
+    "Version":"2.0.0",
     "Language":"python",
     "Website":"https://github.com/HeyItsJono/flowMD",
     "IcoPath": "assets\\mdcalc.png",
